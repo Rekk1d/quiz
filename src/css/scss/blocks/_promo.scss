@@ -1,0 +1,80 @@
+.promo{
+    position: relative;
+    height: 100vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6) ), url('/dist/img/promo/promo-bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 912px;
+    &__wrapper{
+       position: relative;
+    }
+    &__block{
+        background-color: rgba(36,36,36,1);
+        border: 0 solid rgba(242,242,242,1);
+        border-radius: 40px;
+        padding: 40px;
+        position: absolute;
+        top: 158px;
+        width: 878px;
+        height: 548px;
+    }
+    h1{
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: 700;
+        color: #fff;
+    }
+    &__subtitle{
+        color: rgb(186, 186, 186);
+        font-size: 34px;
+        text-transform: uppercase;
+        line-height: 34px;
+        
+    }
+    &__info{
+        display: flex;
+        align-items: center;
+        margin-top: 100px;
+    }
+    &__item{
+        position: relative;
+    }
+    &__item:first-child{
+        margin-right: 90px;
+        
+    }
+    &__text{
+        font-size: 20px;
+        color: #fff;
+        font-weight: 400;
+    }
+    &__num{
+        font-size: 160px;
+        font-weight: 700;
+        color: #fff;
+        position: absolute;
+        opacity: .5;
+        left: -15%;
+        top: -51px;
+        line-height: 160px;
+    }
+    &__ded{
+        // width: 100%;
+        // height: auto;
+        max-width: 701px;
+        height: 874px;
+        position: absolute;
+        top: 98px;
+        left: 53%;
+    }
+    &__ded-img{
+        width: 100%;
+        height: auto;
+        max-height: 814px;
+       
+    }
+    .text_primary{
+        color: $primary-color;
+    }
+}
