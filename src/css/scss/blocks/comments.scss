@@ -1,7 +1,7 @@
 .comments{
     // height: 2000px;
     position: relative;
-    padding: 50px 0;
+    padding: 50px 0 0 0;
     &__divider{
         width: 100%;
         height: 50px;
@@ -67,13 +67,97 @@
                 border-radius: 5px;
                 padding: 16px 50px;
                 text-transform: uppercase;
+                margin-bottom: 100px;
             }
         }
     }
     .feedback{
+        padding: 100px 0 50px 0;
         position: relative;
         z-index: 5;
-        background-color: rgba(0,0,0,.6);
+        background-color: rgba(0,0,0,.8);
+        &__wrapper{
+            width: 100%;
+            height: 600px;
+            background-color: #fff;
+            padding: 60px 120px;
+            position: relative;
+        }
+        &__slider-item{
+          
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
+            
+        }
+        h3{
+            font-size: 26px;
+            font-weight: 700;
+            color: #000;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 30px;
+        }
+        &__text{
+            display: block;
+            font-size: 17px;
+            font-weight: 400;
+            color: #000;
+            text-align: center;
+        }
+        &__info{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &__name, &__date{
+            color: rgb(159, 159, 159);
+            font-size: 15px;
+            font-weight: 400;
+        }
+        &__stars{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                margin-right: 10px;
+            }
+        }
+        &__btn{
+            display: block;
+            font-size: 17px;
+            font-weight: 700;
+            color: #000;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 16px 50px;
+            background-color: $primary-color;
+            box-shadow: 0 5px 15px 0 rgb(255,182,0);
+            transition: .5s;
+            border: none;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+        .button-prev, .button-next{
+            height: 45px;
+            width: 45px;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+        }
+        .button-prev{
+            background: url('/dist/img/comments/feedback/arrow-prev.svg');
+            left: 0;
+            margin: 0 0 0 10px;
+        }
+        .button-next{
+            background: url('/dist/img/comments/feedback/arrow-next.svg');
+            right: 0;
+            margin: 0 10px 0 0;
+            
+        }
     }
         
     
