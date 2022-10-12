@@ -28,8 +28,6 @@ const buttons = document.querySelectorAll('.trigger-form'),
 
 buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-        
-        console.log('click');
         form.classList.add('form-active')
         body.classList.add('hide-scroll')
         showFirstFormItem()
@@ -122,5 +120,24 @@ btnNext.forEach((btn, index) => {
         //         formItems[i].classList.add('form__item-active')
         //     }
         // }
+    })
+})
+
+
+const formLabel = document.querySelectorAll('.form__label');
+const formCheckbox = document.querySelectorAll('.quiz-block__checkbox');
+
+formLabel.forEach((item, index) => {
+    item.addEventListener('click', () => {
+   
+        for(let i = 0; i < formCheckbox.length; i++) {
+            console.log(formCheckbox[i]);
+            // if(i == index) {
+            //     formCheckbox[i].classList.toggle('quiz-block__checkbox-active')
+            //     console.log(true);
+            //     console.log(item);
+            //     console.log(formCheckbox[i]);
+            // }
+        }
     })
 })
