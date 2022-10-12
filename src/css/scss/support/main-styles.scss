@@ -20,3 +20,60 @@
 .hide-scroll{
     overflow-y: hidden;
 }
+.btn{
+    &:hover{
+        transform: translate(0, -3px);
+        transition: .5s;
+    }
+    &-yellow{
+        &:hover{
+            background-color: #000;
+            color: #fff;
+        }
+    }
+    &-black{
+        &:hover{
+            color: #fff;
+        }
+    }
+}
+.trans_down{
+    width: 100%;
+    z-index: 5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    svg{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+.trans_up{
+    width: 100%;
+    z-index: 5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    pointer-events: none;
+    svg{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+.trans_diagonal_right{
+    height: 60px;
+    transform: translateY(-1px) translateZ(0);
+}
+.trans_diagonal_left{
+    height: 60px;
+    transform: translateY(1px) translateZ(0);
+}
