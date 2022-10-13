@@ -56,12 +56,6 @@ formClose.addEventListener('click', () => {
 
 function showFirstFormItem (index, count) {
     formItems.forEach((item, i) => {
-    //    if(item.id !== "0") {
-    //     item.classList.add('form__item-non-active')
-    //    } else if(item.id == "0") {
-    //         item.classList.remove('form__item-non-active')
-    //         item.classList.add('form__item-active')
-    //    }
         if(index == item.id && count !== 0) {
             item.classList.remove('form__item-non-active')
             item.classList.add('form__item-active')
@@ -72,25 +66,8 @@ function showFirstFormItem (index, count) {
         else {
             item.classList.add('form__item-non-active')
         }
-        // switch(index){
-        //     case item.id:
-        //         item.classList.remove('form__item-non-active')
-        //         item.classList.add('form__item-active')
-        //     default: 
-
-        // }
 
     })
-    // for(let i = formItems.length; i++) {
-    //     switch(index){
-    //         case formItems[i].id:
-    //             formItems[i].classList.remove('form__item-non-active')
-    //             formItems[i].classList.add('form__item-active')
-    //         default: 
-    //         formItems[i].classList.remove('form__item-non-active')
-    //         formItems[i].classList.add('form__item-active')
-    //     }
-    // }
 }
 
 function formItemActive(idx) {
@@ -114,19 +91,6 @@ btnPrev.forEach(btn => {
     btn.addEventListener('click', (e) => {
         idx-=1
         e.preventDefault()
-        // formItems.forEach((item, i) => {
-        //         if(item.classList.contains('form__item-active')) {
-        //             item.classList.remove('form__item-active')
-        //             item.classList.add('form__item-non-active')
-                    
-                    
-        //         }
-        //         if(item.id == idx) {
-        //             item.classList.add('form__item-active')
-        //             item.classList.remove('form__item-non-active')
-                    
-        //         }
-        // })
         formItemActive(idx)
     })
 })
@@ -139,27 +103,6 @@ btnNext.forEach((btn, index) => {
         idx+=1
         e.preventDefault()
         formItemActive(idx)
-        // formItems.forEach((item, i) => {
-        //         if(item.classList.contains('form__item-active')) {
-        //             item.classList.remove('form__item-active')
-        //             item.classList.add('form__item-non-active')
-                    
-                    
-        //         }
-        //         if(item.id == idx) {
-        //             item.classList.add('form__item-active')
-        //             item.classList.remove('form__item-non-active')
-                    
-        //         }
-        // })
-        // for(let i = 0; i < formItems.length; i++) {
-        //     formItems[i].classList.remove('form__item-active');
-        //     if(i === index) {
-        //         console.log(true);
-        //         console.log(formItems[i]);
-        //         formItems[i].classList.add('form__item-active')
-        //     }
-        // }
         
       
     })
@@ -174,15 +117,6 @@ const formInputs = document.querySelectorAll('.form__input-hidden[type=checkbox]
 
 formInputs.forEach(input => {
     input.addEventListener('click', (e) => {
-        // if(!input.checked) {
-        //     btnNext.forEach(btn => {
-        //         console.log(btn);
-        //         btn.disabled = !btn.disabled
-        //         console.log(true);
-        //     })
-        // } else {
-        //     console.log(true);
-        // }
         if(input.checked) {
             console.log('input checked');
         } else if(!input.checked) {
