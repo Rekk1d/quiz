@@ -12,6 +12,7 @@
         z-index: 1000;
         min-height: 100%;
         overflow: scroll;
+        overflow-x: hidden;
     }
     form{
         display: flex;
@@ -52,6 +53,10 @@
         font-weight: 600;
         border: none;
         border-radius: 10px;
+        &:hover{
+            background-color: #000;
+            color: #fff;
+        }
     }
     &__close{
         position: absolute;
@@ -75,8 +80,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        // position: absolute;
-        // bottom: 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
         margin: 20px 0;
         &-bottom{
             position: absolute;
@@ -181,5 +188,16 @@
             align-items: center;
             justify-content: center;
         }
+    }
+    &__text-input{
+        background-color: rgba(242, 243, 244, 1);
+        color: #000;
+        font-size: 18px;
+        width: 330px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: contrast(.88);
+        padding: 12px 10px;
     }
 }

@@ -25,31 +25,61 @@ const buttons = document.querySelectorAll('.trigger-form'),
       formItems = document.querySelectorAll('.form__item'),
       btnNext = document.querySelectorAll('.form__item-btn'),
       btnPrev = document.querySelectorAll('.btn-prev');
-
+let count = 0;
 buttons.forEach(btn => {
     btn.addEventListener('click', () => {
+        
         form.classList.add('form-active')
         body.classList.add('hide-scroll')
-        showFirstFormItem()
+        
+        showFirstFormItem(index, count)
+        count++;
     })
 })
+
+let index = 0;
 formClose.addEventListener('click', () => {
     form.classList.remove('form-active')
     body.classList.remove('hide-scroll')
     formItems.forEach(item => {
+        if(item.classList.contains('form__item-active')) {
+            index = item.id;
+            console.log(index);
+        }
         item.classList.remove('form__item-active')
         item.classList.add('form__item-non-active')
+       
     })
 })
 
-function showFirstFormItem () {
-    formItems.forEach(item => {
-       if(item.id !== "0") {
-        item.classList.add('form__item-non-active')
-       } else if(item.id == "0") {
+
+
+function showFirstFormItem (index, count) {
+    formItems.forEach((item, i) => {
+    //    if(item.id !== "0") {
+    //     item.classList.add('form__item-non-active')
+    //    } else if(item.id == "0") {
+    //         item.classList.remove('form__item-non-active')
+    //         item.classList.add('form__item-active')
+    //    }
+        if(index == item.id && count !== 0) {
             item.classList.remove('form__item-non-active')
             item.classList.add('form__item-active')
-       }
+        }
+        else if(index == '0' && item.id == "0"){
+            item.classList.add('form__item-active')
+        }
+        else {
+            item.classList.add('form__item-non-active')
+        }
+        // switch(index){
+        //     case item.id:
+        //         item.classList.remove('form__item-non-active')
+        //         item.classList.add('form__item-active')
+        //     default: 
+
+        // }
+
     })
 }
 
@@ -127,17 +157,17 @@ btnNext.forEach((btn, index) => {
 const formLabel = document.querySelectorAll('.form__label');
 const formCheckbox = document.querySelectorAll('.quiz-block__checkbox');
 
-formLabel.forEach((item, index) => {
-    item.addEventListener('click', () => {
+// formLabel.forEach((item, index) => {
+//     item.addEventListener('click', () => {
    
-        for(let i = 0; i < formCheckbox.length; i++) {
-            console.log(formCheckbox[i]);
-            // if(i == index) {
-            //     formCheckbox[i].classList.toggle('quiz-block__checkbox-active')
-            //     console.log(true);
-            //     console.log(item);
-            //     console.log(formCheckbox[i]);
-            // }
-        }
-    })
-})
+//         for(let i = 0; i < formCheckbox.length; i++) {
+//             console.log(formCheckbox[i]);
+//             // if(i == index) {
+//             //     formCheckbox[i].classList.toggle('quiz-block__checkbox-active')
+//             //     console.log(true);
+//             //     console.log(item);
+//             //     console.log(formCheckbox[i]);
+//             // }
+//         }
+//     })
+// })
