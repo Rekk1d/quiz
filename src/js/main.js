@@ -81,6 +81,16 @@ function showFirstFormItem (index, count) {
         // }
 
     })
+    // for(let i = formItems.length; i++) {
+    //     switch(index){
+    //         case formItems[i].id:
+    //             formItems[i].classList.remove('form__item-non-active')
+    //             formItems[i].classList.add('form__item-active')
+    //         default: 
+    //         formItems[i].classList.remove('form__item-non-active')
+    //         formItems[i].classList.add('form__item-active')
+    //     }
+    // }
 }
 
 function formItemActive(idx) {
@@ -103,7 +113,6 @@ var idx = 0;
 btnPrev.forEach(btn => {
     btn.addEventListener('click', (e) => {
         idx-=1
-        console.log(idx);
         e.preventDefault()
         // formItems.forEach((item, i) => {
         //         if(item.classList.contains('form__item-active')) {
@@ -126,6 +135,7 @@ btnPrev.forEach(btn => {
 btnNext.forEach((btn, index) => {
     
     btn.addEventListener('click', (e) => {
+       
         idx+=1
         e.preventDefault()
         formItemActive(idx)
@@ -150,24 +160,48 @@ btnNext.forEach((btn, index) => {
         //         formItems[i].classList.add('form__item-active')
         //     }
         // }
+        
+      
     })
 })
 
 
 const formLabel = document.querySelectorAll('.form__label');
 const formCheckbox = document.querySelectorAll('.quiz-block__checkbox');
+const formInputs = document.querySelectorAll('.form__input-hidden[type=checkbox]');
 
-// formLabel.forEach((item, index) => {
-//     item.addEventListener('click', () => {
-   
-//         for(let i = 0; i < formCheckbox.length; i++) {
-//             console.log(formCheckbox[i]);
-//             // if(i == index) {
-//             //     formCheckbox[i].classList.toggle('quiz-block__checkbox-active')
-//             //     console.log(true);
-//             //     console.log(item);
-//             //     console.log(formCheckbox[i]);
-//             // }
-//         }
-//     })
-// })
+
+
+formInputs.forEach(input => {
+    input.addEventListener('click', (e) => {
+        // if(!input.checked) {
+        //     btnNext.forEach(btn => {
+        //         console.log(btn);
+        //         btn.disabled = !btn.disabled
+        //         console.log(true);
+        //     })
+        // } else {
+        //     console.log(true);
+        // }
+        if(input.checked) {
+            console.log('input checked');
+        } else if(!input.checked) {
+            btnNext.forEach(btn => {
+                        btn.disabled = !btn.disabled
+                        console.log('btn disabled');
+                    })
+        }
+        e.stopPropagation()
+        
+    })
+})
+formLabel.forEach((item, index) => {
+    item.addEventListener('click', (e) => {
+        for(let i = 0; i < formCheckbox.length; i++) {
+            if(i == index) {
+                formCheckbox[i].classList.toggle('quiz-block__checkbox-active')
+            }
+        }
+        
+    })
+})
