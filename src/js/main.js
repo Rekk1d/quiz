@@ -44,7 +44,6 @@ formClose.addEventListener('click', () => {
     formItems.forEach(item => {
         if(item.classList.contains('form__item-active')) {
             index = item.id;
-            console.log(index);
         }
         item.classList.remove('form__item-active')
         item.classList.add('form__item-non-active')
@@ -69,7 +68,7 @@ function showFirstFormItem (index, count) {
 
     })
 }
-
+//Сюда встроить логику (проверку если все норм, то классы, которые уже есть в этой функции, иначе блокировать)
 function formItemActive(idx) {
     formItems.forEach((item, i) => {
         if(item.classList.contains('form__item-active')) {
@@ -83,10 +82,12 @@ function formItemActive(idx) {
             item.classList.remove('form__item-non-active')
             
         }
+        
 })
 }
 
 var idx = 0;
+var counter = 0;
 btnPrev.forEach(btn => {
     btn.addEventListener('click', (e) => {
         idx-=1
@@ -96,18 +97,76 @@ btnPrev.forEach(btn => {
 })
 
 
+
 btnNext.forEach((btn, index) => {
-    
+
     btn.addEventListener('click', (e) => {
-       
-        idx+=1
-        e.preventDefault()
-        formItemActive(idx)
         
-      
+       
+        e.preventDefault()
+        
+        
+        if(formValidate() > 0) {
+            idx+=1
+            formItemActive(idx)
+             
+        }
     })
 })
 
+
+// ПОЧТИИИИИИИИИИИИИ
+function formValidate() {
+    var arr = [];
+    const formItemi = document.querySelectorAll('.form__item');
+    formItemi.forEach(item => {
+        let formInputi = item.querySelectorAll('.form__input-hidden[type=checkbox]');
+        if(item.classList.contains('form__item-active')){
+            console.log('active slide');
+            let inputsLength = formInputi.length;
+            formInputi.forEach(input => {
+                
+                input.addEventListener('click', (e) => {
+                    e.stopPropagation()
+                })
+
+                // let arr = [];
+                // arr.push(input)
+
+                // if(input.checked) {
+                //     arr.push(input)
+                //     counter = counter + 1;
+                // }
+
+                
+                if(input.checked) {
+                    counter = counter + 1
+                    console.log('checked');
+                    
+                }
+                 
+                else if(!input.checked) {
+                    
+                    arr.push(input)
+                    if(arr.length == inputsLength) {
+                        counter = 0;
+                        console.log('not checked');
+                    }
+                    
+                    
+                    console.log(input);
+                }
+                
+               
+            
+            })
+            
+        }
+        
+    })
+    console.log(counter);
+    return counter;
+};
 
 const formLabel = document.querySelectorAll('.form__label');
 const formCheckbox = document.querySelectorAll('.quiz-block__checkbox');
@@ -115,22 +174,23 @@ const formInputs = document.querySelectorAll('.form__input-hidden[type=checkbox]
 
 
 
-formInputs.forEach(input => {
-    input.addEventListener('click', (e) => {
-        if(input.checked) {
-            console.log('input checked');
-        } else if(!input.checked) {
-            btnNext.forEach(btn => {
-                        btn.disabled = !btn.disabled
-                        console.log('btn disabled');
-                    })
-        }
-        e.stopPropagation()
+// formInputs.forEach(input => {
+//     input.addEventListener('click', (e) => {
+//         if(input.checked) {
+//             console.log('input checked');
+//         } else if(!input.checked) {
+//             btnNext.forEach(btn => {
+//                         btn.disabled = !btn.disabled
+//                         console.log('btn disabled');
+//                     })
+//         }
+//         e.stopPropagation()
         
-    })
-})
+//     })
+// })
 formLabel.forEach((item, index) => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener('change', (e) => {
+        e.stopPropagation()
         for(let i = 0; i < formCheckbox.length; i++) {
             if(i == index) {
                 formCheckbox[i].classList.toggle('quiz-block__checkbox-active')
