@@ -231,6 +231,16 @@
     .feedback{
         display: none;
     }
+    .form{
+        form{
+            label{
+                display: block;
+                margin: 0 auto;
+                max-width: 200px;
+                
+            }
+        }
+    }
     @media (max-width: 470px) {
         .section-title{
             font-size: 36px;

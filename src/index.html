@@ -444,6 +444,15 @@
         </footer>
 
         <section class="form">
+            <div class="form__dots">
+                <div class="form__dot form__dot-active"></div>
+                <div class="form__dot"></div>
+                <div class="form__dot"></div>
+                <div class="form__dot"></div>
+                <div class="form__dot"></div>
+                <div class="form__dot"></div>
+                <div class="form__dot"></div>
+            </div>
             <div class="form__close">
                 <svg viewBox="0 0 44 44" height="16" width="16">
                     <path fill-rule="evenodd" style="fill: #fff;" d="M 43.0127 43.0122C 43.7939 42.2314 43.7939 40.9648 43.0127 40.1841L 24.6279 21.7993L 43.0127 3.41455C 43.7939 2.6333 43.7939 1.36719 43.0127 0.585938C 42.2314 -0.194824 40.9658 -0.194824 40.1846 0.585938L 21.7998 18.9707L 3.41504 0.585938C 2.63379 -0.195312 1.36719 -0.195312 0.585938 0.585938C -0.195312 1.36719 -0.195312 2.6333 0.585938 3.41455L 18.9717 21.7993L 0.586914 40.1841C -0.194336 40.9653 -0.194336 42.2314 0.586914 43.0127C 1.36719 43.7935 2.63379 43.7935 3.41504 43.0127L 21.7998 24.6279L 40.1846 43.0122C 40.9648 43.7935 42.2314 43.7935 43.0127 43.0122Z">
@@ -451,19 +460,34 @@
                 </svg>
             </div>
             <div class="form__outer">
+                
                 <form action="">
+                    
                     <div class="form__item" id="0">
                         <h3 class="form__title">Подбираем мужские или женские кроссовки мечты</h3>
                         <span class="form__text mb-5">“У меня нет гендерных предрассудков, но мне важно знать это для мощного Хасл-подбора кроссовок”</span>
-                        <div class="form__inputs mb-4">
+                        <!-- <div class="form__inputs mb-4">
                             <label for="man">Мужские</label>
-                            <input type="checkbox" id="man" class="form__input-hidden" >
+                            <input type="radio" id="man" name="radioBtn" value="man" checked>
                         </div>
                         <div class="form__inputs">
                             <label for="female">Женские</label>
-                            <input type="checkbox" id="female" class="form__input-hidden">
-                        </div>
-    
+                            <input type="radio" id="female" name="radioBtn" value="female">
+                        </div> -->
+                        <label for="man" class="form__radio">
+                            <input type="radio" id="man" name="radioBtn" value="man" checked class="radio-input">
+                            <div class="form__radio-block">
+                                <span>Мужские</span>
+                                <div class="form__radio-custom form__radio-custom-checked"></div>
+                            </div>
+                        </label>
+                        <label for="female" class="form__radio">
+                            <input type="radio" id="female" name="radioBtn" value="female" checked class="radio-input">
+                            <div class="form__radio-block">
+                                <span>Женские</span>
+                                <div class="form__radio-custom"></div>
+                            </div>
+                        </label>
                         <div class="form__buttons form__buttons-bottom">
                             <button class="form__item-btn">Далее</button>
                         </div>
@@ -473,7 +497,7 @@
                         <span class="form__text mb-5">“Твои любимые бренды помогут мне в поисках твоих идеальных кроссовок”</span>
                         
                         <div class="row d-flex justify-content-center">
-                            <div class="col-md-2">
+                            <div class="col-lg-2 col-sm-6 col-12">
                                 <label for="adidas" class="form__label">
                                     <input type="checkbox" id="adidas" class="form__input-hidden">
                                     <span class="quiz-block">
@@ -486,7 +510,7 @@
                                    
                                 </label>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-lg-2 col-sm-6 col-12">
                                 <label for="nike" class="form__label">
                                     <input type="checkbox" id="nike" class="form__input-hidden">
                                     <span class="quiz-block">
@@ -499,7 +523,7 @@
                                    
                                 </label>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-lg-2 col-sm-6 col-12">
                                 <label for="reebok" class="form__label">
                                     <input type="checkbox" id="reebok" class="form__input-hidden">
                                     <span class="quiz-block">
@@ -512,7 +536,7 @@
                                    
                                 </label>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-lg-2 col-sm-6 col-12">
                                 <label for="newbalance" class="form__label">
                                     <input type="checkbox" id="newbalance" class="form__input-hidden">
                                     <span class="quiz-block">
@@ -525,7 +549,7 @@
                                    
                                 </label>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-lg-2 col-sm-6 col-12">
                                 <label for="vans" class="form__label">
                                     <input type="checkbox" id="vans" class="form__input-hidden">
                                     <span class="quiz-block">
@@ -540,7 +564,7 @@
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center ">
-                            <div class="col-md-2">
+                            <div class="col-lg-2 col-sm-6 col-12">
                                 <label for="puma" class="form__label">
                                     <input type="checkbox" id="puma" class="form__input-hidden">
                                     <span class="quiz-block">
@@ -553,7 +577,7 @@
                                    
                                 </label>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-lg-2 col-sm-6 col-12">
                                 <label for="asics" class="form__label">
                                     <input type="checkbox" id="asics" class="form__input-hidden">
                                     <span class="quiz-block">
@@ -566,7 +590,7 @@
                                    
                                 </label>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-lg-2 col-sm-6 col-12">
                                 <label for="balenciaga" class="form__label">
                                     <input type="checkbox" id="balenciaga" class="form__input-hidden">
                                     <span class="quiz-block">
@@ -579,7 +603,7 @@
                                    
                                 </label>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-lg-2 col-sm-6 col-12">
                                 <label for="fila" class="form__label">
                                     <input type="checkbox" id="fila" class="form__input-hidden">
                                     <span class="quiz-block">
@@ -592,7 +616,7 @@
                                    
                                 </label>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-lg-2 col-sm-6 col-12">
                                 <label for="salomon" class="form__label">
                                     <input type="checkbox" id="salomon" class="form__input-hidden">
                                     <span class="quiz-block">

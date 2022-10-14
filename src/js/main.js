@@ -68,9 +68,23 @@ function showFirstFormItem (index, count) {
 
     })
 }
+
+const formDots = document.querySelectorAll('.form__dot');
+function activeDot ()  {
+    formItems.forEach((item, index) => {
+        for(let i = 0; i < formDots.length; i++) {
+            if(i == index) {
+                formDots[i].classList.add('form__dot-active')
+            }
+        }
+    })
+}
+
 //Сюда встроить логику (проверку если все норм, то классы, которые уже есть в этой функции, иначе блокировать)
 function formItemActive(idx) {
-    formItems.forEach((item, i) => {
+    formItems.forEach((item, index) => {
+        
+        
         if(item.classList.contains('form__item-active')) {
             item.classList.remove('form__item-active')
             item.classList.add('form__item-non-active')
@@ -82,12 +96,18 @@ function formItemActive(idx) {
             item.classList.remove('form__item-non-active')
             
         }
-        
+        for(let i = 0; i < formDots.length; i++) {
+            formDots[i].classList.remove('form__dot-active')
+            if(i == idx) {
+                
+                formDots[i].classList.add('form__dot-active')
+            }
+        }
 })
 }
 
 var idx = 0;
-var counter = 0;
+var counter = 1;
 btnPrev.forEach(btn => {
     btn.addEventListener('click', (e) => {
         idx-=1
@@ -122,21 +142,12 @@ function formValidate() {
     formItemi.forEach(item => {
         let formInputi = item.querySelectorAll('.form__input-hidden[type=checkbox]');
         if(item.classList.contains('form__item-active')){
-            console.log('active slide');
             let inputsLength = formInputi.length;
             formInputi.forEach(input => {
                 
                 input.addEventListener('click', (e) => {
                     e.stopPropagation()
                 })
-
-                // let arr = [];
-                // arr.push(input)
-
-                // if(input.checked) {
-                //     arr.push(input)
-                //     counter = counter + 1;
-                // }
 
                 
                 if(input.checked) {
@@ -174,20 +185,6 @@ const formInputs = document.querySelectorAll('.form__input-hidden[type=checkbox]
 
 
 
-// formInputs.forEach(input => {
-//     input.addEventListener('click', (e) => {
-//         if(input.checked) {
-//             console.log('input checked');
-//         } else if(!input.checked) {
-//             btnNext.forEach(btn => {
-//                         btn.disabled = !btn.disabled
-//                         console.log('btn disabled');
-//                     })
-//         }
-//         e.stopPropagation()
-        
-//     })
-// })
 formLabel.forEach((item, index) => {
     item.addEventListener('change', (e) => {
         e.stopPropagation()
@@ -199,3 +196,40 @@ formLabel.forEach((item, index) => {
         
     })
 })
+
+
+
+//radio 
+
+const radioInputs = document.querySelectorAll('.form__radio-custom');
+
+const formRadio = document.querySelectorAll('.form__radio')
+
+function removeActiveRadio () {
+    radioInputs.forEach(input => {
+        input.classList.remove('form__radio-custom-checked')
+        
+        
+    })
+}
+
+formRadio.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        for(let i = 0; i < radioInputs.length; i++) {
+            if(i == index) {
+                removeActiveRadio()
+                radioInputs[i].classList.add('form__radio-custom-checked')
+            }
+        }
+    
+        
+    })
+})
+// radioInputs.forEach(input => {
+//     input.addEventListener('click', () => {
+//         removeActiveRadio()
+//         input.classList.add('form__radio-custom-checked')
+    
+        
+//     })
+// })
