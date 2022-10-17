@@ -1,0 +1,93 @@
+.modal{
+    position: fixed;
+    display: none;
+    right: 50%;
+    transform: translateX(50%);
+    background-color: #fff;
+    top: 5%;
+    left: auto;
+    width: 400px;
+    height: auto;
+    &_active{
+        display: block;
+    }
+    &__wrapper{
+        padding: 40px 20px;
+    }
+    &__close{
+        position: absolute;
+        cursor: pointer;
+        z-index: 1000;
+        width: 50px;
+        height: 50px;
+        right: 0;
+        &::before, &::after{
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            background-color: #acabab;
+            
+        }
+        &::before{
+            transform: rotate(45deg);
+        }
+        &::after{
+            transform: rotate(-45deg);
+        }
+    }
+    &__title{
+        font-size: 24px;
+        font-weight: 400;
+        color: #000;
+        text-align: center;
+        margin: 10px 0;
+    }
+    &__subtitle{
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+        display: block;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        input{
+            font-size: 16px;
+            font-weight: 400;
+            color: #000;
+            height: 40px;
+            border-radius: 4px;
+            background-color: #fff;
+            border: 1px solid rgba(204, 204,204, 1);
+            padding: 3px 5px;
+        }
+        
+    }
+    &__btn{
+        background-color: rgba(100, 200, 83, 1);
+        padding: 18px 30px;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+        max-width: 141px;
+        display: block;
+        margin: 0 auto;
+        border: none;
+        border-radius: 6px;
+    }
+    &-overlay{
+        &_active{
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0,0,0, .5);
+            z-index: 1002;
+        }
+    }
+}

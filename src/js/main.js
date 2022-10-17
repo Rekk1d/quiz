@@ -9,6 +9,75 @@ headerBurger.addEventListener('click', () => {
     
 })
 
+
+//modal
+
+const modalTriggers = document.querySelectorAll('.header__phone'),
+      modal = document.querySelector('.modal'),
+      modalClose = document.querySelector('.modal__close'),
+    //   modalBtn = document.querySelector('.modal__btn'),
+    //   modalInput = document.getElementById('modal__input'),
+      modalOverlay = document.querySelector('.modal-overlay');
+
+
+modalTriggers.forEach(item => {
+    item.addEventListener('click', () => {
+      
+        if(headerBurger.classList.contains('header__burger_active')) {
+            headerBurger.classList.remove('header__burger_active')
+            headerMenu.classList.remove('header__menu_active')
+            modal.classList.add('modal_active')
+            modalOverlay.classList.add('modal-overlay_active')
+            body.classList.add('hide-scroll')
+        } else {
+            modal.classList.add('modal_active')
+            modalOverlay.classList.add('modal-overlay_active')
+            body.classList.add('hide-scroll')
+        }
+    })
+})
+modalClose.addEventListener('click', () => {
+    modal.classList.remove('modal_active')
+    modalOverlay.classList.remove('modal-overlay_active')
+    body.classList.remove('hide-scroll')
+   
+    console.log(modalInput.value.length);
+})
+
+modalOverlay.addEventListener('click', () => {
+    if(modal.classList.contains('modal_active')){
+        modal.classList.remove('modal_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+        body.classList.remove('hide-scroll')
+    }
+})
+
+$("#modal__input").mask("+7 (999) 999-99-99");
+    
+$.fn.setCursorPosition = function(pos) {
+    if ($(this).get(0).setSelectionRange) {
+        $(this).get(0).setSelectionRange(pos, pos);
+    } else if ($(this).get(0).createTextRange) {
+        var range = $(this).get(0).createTextRange();
+        range.collapse(true);
+        range.moveEnd('character', pos);
+        range.moveStart('character', pos);
+        range.select();
+    }
+};
+$('#modal__input').click(function(){
+    $(this).setCursorPosition(4); // set position number
+});
+
+// modalBtn.addEventListener('click', (e) => {
+//     if(modalInput.value.length < 17) {
+//         modalBtn.disabled = true;
+//     } else {
+//         modalBtn.disabled = false;
+//     }
+// })
+
+
 $('#feedback-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -233,3 +302,5 @@ formRadio.forEach((item, index) => {
         
 //     })
 // })
+
+

@@ -30,14 +30,14 @@
                         <li><a href="#">Отзывы</a></li>
                         <li><a href="#">Что происходит</a></li>
                     </ul>
-                    <a href="tel:88005553535" class="header__phone header__phone_mobile">8 (800) 555-35-35</a>
+                    <span class="header__phone header__phone_mobile">8 (800) 555-35-35</span>
                 </div>
-                <a href="tel:88005553535" class="header__phone">8 (800) 555-35-35</a>
+                <span  class="header__phone">8 (800) 555-35-35</span>
             </div>
         </div>
     </header>
     <main>
-        
+        <div class="modal-overlay"></div>
         <section class="promo">
             <!-- <div class="container">
                 <div class="promo__wrapper">
@@ -443,6 +443,20 @@
                 </div>
             </div>
         </footer>
+
+        <div class="modal">
+            <div class="modal__wrapper">
+                <div class="modal__close"></div>
+                <h3 class="modal__title">Заказать звонок</h3>
+                <span class="modal__subtitle">Оставьте свой номер, мы свяжемся с вами в ближайшее время</span>
+                <form action="" class="modal__form">
+                    <label for="modal__input">Телефон</label>
+                    <input type="text" class="mb-1" id="modal__input" required>
+                    <small>должен начинаться на +7</small>
+                    <button class="modal__btn mt-4" type="submit">Заказать</button>
+                </form>
+            </div>
+        </div>
 
         <section class="form">
             <div class="form__dots">
@@ -919,6 +933,7 @@
     </main>
     <script src="/dist/js/jquery/jquery-3.6.0.min.js"></script>
     <script src="/dist/js/slick/slick.min.js"></script>
+    <script src="/dist/js/jquery/jquery.maskedinput.min.js"></script>
     <script src="/dist/js/main.js"></script>
 </body>
 </html>
