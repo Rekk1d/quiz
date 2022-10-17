@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Play';
+    src: url('/dist/fonts/Play-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Play';
+    src: url('/dist/fonts/Play-Bold.ttf');
+    font-weight: 700;
+}
