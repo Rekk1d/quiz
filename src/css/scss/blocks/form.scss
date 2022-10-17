@@ -85,6 +85,19 @@
             display: none;
         }
     }
+    &__btn-submit{
+        padding: 14px 60px;
+        color: #000;
+        background-color: $primary-color;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        &:hover{
+            background-color: #000;
+            color: #fff;
+        }
+    }
     &__item-btn{
         // position: absolute;
         // bottom: 0;
