@@ -162,6 +162,11 @@
             
         }
     }
-        
+    
+    .zoom-img{
+        &__wrapper{
+            display: none;
+        }
+    }
     
 }

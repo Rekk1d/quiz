@@ -306,3 +306,17 @@ formRadio.forEach((item, index) => {
 // })
 
 
+//zoom images
+
+// const zoomImg = document.querySelectorAll('.zoom-image'),
+//       defaultImg = document.querySelectorAll('.default-image');
+
+// defaultImg.forEach((item, index) => {
+//     item.addEventListener('click', () => {
+//         for(let i = 0; i < zoomImg.length; i++) {
+//             if(i == index) {
+//                 zoomImg[i].classList.add('test')
+//             }
+//         }
+//     })
+// })
