@@ -54,6 +54,7 @@ modalOverlay.addEventListener('click', () => {
 
 $(document).ready(function() {
     $("#modal__input").mask("+7 (999) 999-99-99");
+    $("#form-phone").mask("+7 (999) 999-99-99");
     
     $.fn.setCursorPosition = function(pos) {
         if ($(this).get(0).setSelectionRange) {
@@ -69,6 +70,9 @@ $(document).ready(function() {
     $('#modal__input').click(function(){
         $(this).setCursorPosition(4); // set position number
     });
+    $('#form-phone').click(function(){
+        $(this).setCursorPosition(4); // set position number
+    });
 })
 
 
@@ -81,7 +85,32 @@ $('#feedback-slider').slick({
     dots: true,
     prevArrow: $('.button-prev'),
     nextArrow: $('.button-next'),
+    swipe: false,
 })
+
+// if($(window).width() >=768) {
+    $('.img-slider').slick({
+        responsive: [
+            {
+                breakpoint: 100000,
+                settings: 'unslick',
+            },
+            {
+                breakpoint: 850,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    // arrows: true,
+                    prevArrow: $('.button-prevv'),
+                    nextArrow: $('.button-nextt'),
+                  
+                }
+            }
+        ],
+        
+    })
+// }
 
 
 const buttons = document.querySelectorAll('.trigger-form'),
