@@ -52,6 +52,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+        &__img-item{
+            position: relative;
+            max-height: 232px;
+            border-radius: 6px;
         }
         &__btn{
             position: relative;
@@ -166,6 +173,40 @@
     .zoom-img{
         &__wrapper{
             display: none;
+            
+        }
+    }
+    .lupa{
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translateX(50%);;
+        background: url('/dist/img/comments/test-comments/zoom_in.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: 20;
+    }
+    .caption{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 333;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        transition: all 0.7s;
+        opacity: 0;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+    .caption{
+        &:hover{
+            opacity: 1;
+            visibility: visible;
         }
     }
     
