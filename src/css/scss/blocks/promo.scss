@@ -5,19 +5,27 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-    height: 912px;
+    max-width: 100%;
+    .container{
+        height: 100vh;
+        position: relative;
+    }
+    &__divider{
+        width: 100%;
+        height: 85.5px;
+    }
     &__wrapper{
-       position: relative;
+       position: absolute;
+       top: 8%;
+       right: 50%;
+       transform: translateX(50%);
+       width: 95%;;
     }
     &__block{
         background-color: rgba(36,36,36,1);
         border: 0 solid rgba(242,242,242,1);
         border-radius: 40px;
-        padding: 40px;
-        position: absolute;
-        top: 158px;
-        width: 878px;
-        height: 548px;
+        padding: 40px 40px 0 40px;
     }
     h1{
         text-transform: uppercase;
@@ -39,40 +47,50 @@
     }
     &__item{
         position: relative;
+        display: flex;
+        height: 100%;
+        align-items: center;
     }
-    &__item:first-child{
-        margin-right: 90px;
+    // &__item:first-child{
+    //     margin-right: 90px;
         
-    }
+    // }
     &__text{
         font-size: 20px;
         color: #fff;
         font-weight: 400;
+        position: absolute;
+        left: 40px;
     }
     &__num{
         font-size: 160px;
         font-weight: 700;
         color: #fff;
-        position: absolute;
+        // position: absolute;
         opacity: .5;
-        left: -15%;
-        top: -51px;
+        // left: -15%;
+        // top: -51px;
         line-height: 160px;
     }
     &__ded{
-        // width: 100%;
-        // height: auto;
-        max-width: 701px;
-        height: 874px;
-        position: absolute;
-        top: 98px;
-        left: 53%;
+        max-width: 100%;
+        img{
+            max-width: 100%;
+        }
     }
-    &__ded-img{
+    &__btn{
+        // padding: 22px 36px;
         width: 100%;
-        height: auto;
-        max-height: 814px;
-       
+        box-shadow: 0 5px 15px 0 rgb(255 182 0);
+        transition: 0.5s;
+        border: none;
+        border-radius: 6px;
+        color: #000;
+        background-color: $primary-color;
+        text-transform: uppercase;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 10px;
     }
     .text_primary{
         color: $primary-color;

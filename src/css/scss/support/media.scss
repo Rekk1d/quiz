@@ -131,6 +131,30 @@
             color: #000;
         }
     }
+    .promo{
+        height: auto;
+        &__item-info{
+            display: none;
+        }
+        &__ded{
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        h1{
+            font-size: 32px;
+            text-align: center;
+        }
+        &__subtitle{
+            font-size: 30px;
+            text-align: center;
+            display: block;
+            margin-bottom: 20px;
+        }
+        &__wrapper{
+            top: 5px;
+        }
+
+    }
     .network{
         &__img{
             img{
@@ -143,6 +167,11 @@
         &__text{
             text-align: center;
             margin-bottom: 20px;
+        }
+        &__block{
+            h2{
+                font-size: 40px;
+            }
         }
         
     }
@@ -209,6 +238,12 @@
 }
 
 @media (max-width: 576px){
+    .promo{
+        height: 100vh;
+        &__wrapper{
+            top: 5%;
+        }
+    }
     .network{
         &__block{
             align-items: center;

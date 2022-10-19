@@ -71,13 +71,7 @@ $(document).ready(function() {
     });
 })
 
-// modalBtn.addEventListener('click', (e) => {
-//     if(modalInput.value.length < 17) {
-//         modalBtn.disabled = true;
-//     } else {
-//         modalBtn.disabled = false;
-//     }
-// })
+
 
 
 $('#feedback-slider').slick({
@@ -223,7 +217,7 @@ function formValidate() {
                 
                 if(input.checked) {
                     counter = counter + 1
-                    console.log('checked');
+                    // console.log('checked');
                     
                 }
                  
@@ -232,11 +226,11 @@ function formValidate() {
                     arr.push(input)
                     if(arr.length == inputsLength) {
                         counter = 0;
-                        console.log('not checked');
+                        // console.log('not checked');
                     }
                     
                     
-                    console.log(input);
+                    // console.log(input);
                 }
                 
                
@@ -306,17 +300,4 @@ formRadio.forEach((item, index) => {
 // })
 
 
-//zoom images
 
-// const zoomImg = document.querySelectorAll('.zoom-image'),
-//       defaultImg = document.querySelectorAll('.default-image');
-
-// defaultImg.forEach((item, index) => {
-//     item.addEventListener('click', () => {
-//         for(let i = 0; i < zoomImg.length; i++) {
-//             if(i == index) {
-//                 zoomImg[i].classList.add('test')
-//             }
-//         }
-//     })
-// })
