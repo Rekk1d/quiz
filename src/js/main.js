@@ -41,7 +41,6 @@ modalClose.addEventListener('click', () => {
     modalOverlay.classList.remove('modal-overlay_active')
     body.classList.remove('hide-scroll')
    
-    console.log(modalInput.value.length);
 })
 
 modalOverlay.addEventListener('click', () => {
@@ -223,20 +222,49 @@ btnNext.forEach((btn, index) => {
         if(formValidate() > 0) {
             idx+=1
             formItemActive(idx)
-             
         }
     })
 })
 
-
-// ПОЧТИИИИИИИИИИИИИ
 function formValidate() {
     var arr = [];
     const formItemi = document.querySelectorAll('.form__item');
     formItemi.forEach(item => {
         let formInputi = item.querySelectorAll('.form__input-hidden[type=checkbox]');
+        let formAmountInput = item.querySelector('.form__amount-input');
+        let formNameInput = item.querySelector('.form__name-input');
+        
         if(item.classList.contains('form__item-active')){
             let inputsLength = formInputi.length;
+           
+            if(formAmountInput) {
+                if(Number(formAmountInput.value) < 1999) {
+                    counter = 0;
+                }
+                formAmountInput.addEventListener('change', (e) => {
+                    e.stopPropagation()
+                    if(Number(formAmountInput.value) < 1999) {
+                        counter = 0;
+                    }if(Number(formAmountInput.value) >= 2000){
+                        counter = counter + 1;
+                    }
+                })
+            }
+            if(formNameInput) {
+                if(formNameInput.value.length < 3) {
+                    counter = 0;
+                }
+                formNameInput.addEventListener('change', (e) => {
+                    e.stopPropagation()
+                    if(formNameInput.value.length >= 3) {
+                        counter = counter + 1;
+                    }
+                    if(formNameInput.value.length < 3) {
+                        counter = 0;
+                    }
+                })
+            }
+            
             formInputi.forEach(input => {
                 
                 input.addEventListener('click', (e) => {
@@ -246,7 +274,6 @@ function formValidate() {
                 
                 if(input.checked) {
                     counter = counter + 1
-                    // console.log('checked');
                     
                 }
                  
@@ -255,11 +282,9 @@ function formValidate() {
                     arr.push(input)
                     if(arr.length == inputsLength) {
                         counter = 0;
-                        // console.log('not checked');
                     }
                     
                     
-                    // console.log(input);
                 }
                 
                
@@ -267,9 +292,16 @@ function formValidate() {
             })
             
         }
-        
+       
     })
-    console.log(counter);
+    // let formAmountInput = document.querySelector('.form__amount-input');
+    // formAmountInput.addEventListener('change', () => {
+    //     if(formAmountInput.value < 2000) {
+    //         counter = 0;
+    //     } else if(formAmountInput.value > 2000){
+    //         counter++;
+    //     }
+    // })
     return counter;
 };
 
